@@ -79,6 +79,63 @@ The design demonstrates **serial-to-parallel and parallel-to-serial data convers
 
 ---
 
+## 📂 File Descriptions & Ports
+
+### 1️⃣ `uart_tx.v` – UART Transmitter
+**Purpose:** Converts 8-bit parallel data to serial data for transmission.
+
+**Ports:**
+| Port      | Direction   | Description                       |
+|-----------|-------------|-----------------------------------|
+| clk       | input       | System clock                      |
+| rst       | input       | Asynchronous reset                |
+| tx_start  | input       | Start transmission signal         |
+| data_in   | input [7:0] | 8-bit parallel data to send       |
+| tx_serial | output      | Serial data output (TX line)      |
+| busy      | output      | High when transmission is ongoing |
+
+---
+
+### 2️⃣ `uart_rx.v` – UART Receiver
+**Purpose:** Converts serial input data into 8-bit parallel data.
+
+**Ports:**
+| Port       | Direction    | Description                             |
+|------------|--------------|-----------------------------------------|
+| clk        | input        | System clock                            |
+| rst        | input        | Asynchronous reset                      |
+| rx_serial  | input        | Serial data input (RX line)             |
+| data_out   | output [7:0] | 8-bit parallel received data            |
+| rx_done    | output       | High when a full byte has been received |
+
+---
+
+### 3️⃣ `baud_gen.v` – Baud Rate Generator
+**Purpose:** Generates timing ticks for UART transmission/reception.
+
+**Ports:**
+| Port      | Direction    | Description                   |
+|-----------|--------------|-------------------------------|
+| clk       | input        | System clock                  |
+| rst       | input        | Asynchronous reset            |
+| baud_tick | output       | Tick signal at UART baud rate |
+
+---
+
+### 4️⃣ `uart_tb.v` – Testbench
+**Purpose:** Simulates UART transmitter and receiver.
+
+**Ports:** *None* (testbench only)
+
+**Functionality:**
+- Provides stimulus for `uart_tx` and `uart_rx`  
+- Generates clock and reset signals  
+- Sends test data to TX module  
+- Monitors RX output for correctness  
+- Generates VCD waveform for GTKWave visualization  
+
+---
+
 ## 🚀 How It Works
 
 1. **Data Input:** Parallel data is given to TX module  
