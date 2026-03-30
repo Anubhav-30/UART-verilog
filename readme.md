@@ -105,19 +105,3 @@ This project demonstrates a **fully functional UART module in Verilog**, verifie
 It serves as a solid foundation for learning **serial communication** and hardware interface design.
 
 ---
-
-## 📂 Project Structure
-
-```text
-├── src/
-│   ├── uart_tx.v
-│   ├── uart_rx.v
-│   ├── baud_gen.v
-│   └── uart_tb.v
-├── images/
-│   ├── blockdiagram.jpeg
-│   ├── framediagram.jpeg
-│   ├── wavegtk.png
-│   ├── wavevs.png
-│   └── uart_demo.gif (optional)
-└── README.md
