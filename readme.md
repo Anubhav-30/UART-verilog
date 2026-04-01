@@ -1,4 +1,5 @@
-# 🐍 UART Communication Protocol in Verilog
+<h1 align="center"># 🐍 UART Communication Protocol in Verilog</h1>
+<p align="center">
 
 **Author: Anubhav**  
 
