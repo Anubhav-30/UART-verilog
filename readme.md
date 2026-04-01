@@ -10,7 +10,7 @@
 
 ---
 
-## 📌 Overview
+## 📌 Overview.
 
 This project implements a **UART (Universal Asynchronous Receiver/Transmitter)** using Verilog.  
 It allows **serial communication** between two devices, transmitting and receiving 8-bit data frames asynchronously.
